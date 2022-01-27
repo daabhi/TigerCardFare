@@ -1,13 +1,11 @@
-package util;
+package configuration;
 
 import lombok.NoArgsConstructor;
-import pojos.DayOfWeek;
 import pojos.PeriodOfDay;
 import lombok.Getter;
 import lombok.Setter;
 import pojos.Zone;
 
-import java.time.LocalTime;
 import java.util.*;
 
 /*
@@ -43,14 +41,11 @@ public class ZoneFeesConfigurations {
         }
     }
 
-    public int calculate(PeriodOfDay periodOfDay, Zone zone){
-        Map<PeriodOfDay,Integer> periodOfDayIntegerMap = zoneListConfigurations.get(zone);
-        if (!periodOfDayIntegerMap.isEmpty()){
+    public int getFare(PeriodOfDay periodOfDay, Zone zone) {
+        Map<PeriodOfDay, Integer> periodOfDayIntegerMap = zoneListConfigurations.get(zone);
+        if (!periodOfDayIntegerMap.isEmpty()) {
             return periodOfDayIntegerMap.get(periodOfDay);
         }
         return 0;
     }
-
-
-
 }

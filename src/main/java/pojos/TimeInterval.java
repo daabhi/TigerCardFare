@@ -1,10 +1,13 @@
 package pojos;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
+
 import java.time.LocalTime;
 
-@Getter @Setter
+@Getter @Setter @EqualsAndHashCode @ToString
 public class TimeInterval {
     private LocalTime startTime;
     private LocalTime endTime;
@@ -14,6 +17,6 @@ public class TimeInterval {
     }
 
     public boolean contains(LocalTime localTime){
-        return localTime.isAfter(startTime) && localTime.isBefore(endTime);
+        return (localTime.isAfter(startTime) && localTime.isBefore(endTime))|| localTime.equals(startTime) || localTime.equals(endTime);
     }
 }

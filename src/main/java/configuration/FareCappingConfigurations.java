@@ -1,4 +1,4 @@
-package util;
+package configuration;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -6,8 +6,8 @@ import lombok.Setter;
 import pojos.Cap;
 import pojos.Zone;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /*
 Zones          Daily Cap Weekly Cap (Monday - Sunday)
@@ -25,17 +25,17 @@ public class FareCappingConfigurations {
             Map<Cap,Integer> localZoneCapConfig = new HashMap<>();
             localZoneCapConfig.put(cap, capLimit);
             fareCappingConfig.put(zone,localZoneCapConfig);
-            if (zone.getZoneStartId() != zone.getZoneEndId()){
-                //Need some more intelligent logic here to say if given 1-2 then insert 2-1 and vice versa
-                fareCappingConfig.put(new Zone(zone.getZoneEndId(),zone.getZoneStartId()),localZoneCapConfig);
-            }
+            populateOtherSide(zone, localZoneCapConfig);
         }else {
             zoneCapConfig.put(cap,capLimit);
-            if (zone.getZoneStartId() != zone.getZoneEndId()){
-                //Need some more intelligent logic here to say if given 1-2 then insert 2-1 and vice versa
-                fareCappingConfig.put(new Zone(zone.getZoneEndId(),zone.getZoneStartId()),zoneCapConfig);
-            }
+            populateOtherSide(zone, zoneCapConfig);
+        }
+    }
 
+    private void populateOtherSide(Zone zone, Map<Cap, Integer> localZoneCapConfig) {
+        if (zone.getZoneStartId() != zone.getZoneEndId()) {
+            Zone otherWayZone = new Zone(zone.getZoneEndId(), zone.getZoneStartId());
+            fareCappingConfig.put(otherWayZone, localZoneCapConfig);
         }
     }
 
@@ -53,5 +53,13 @@ public class FareCappingConfigurations {
         }else {
             return 0;
         }
+    }
+
+    public Integer getDailyCap(List<Zone> zones) {
+        return zones.stream().map(this::getDailyCap).collect(Collectors.toList()).stream().max(Comparator.naturalOrder()).get();
+    }
+
+    public Integer getWeeklyCap(List<Zone> zones) {
+        return zones.stream().map(this::getWeeklyCap).collect(Collectors.toList()).stream().max(Comparator.naturalOrder()).get();
     }
 }

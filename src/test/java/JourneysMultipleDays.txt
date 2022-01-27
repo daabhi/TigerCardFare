@@ -1,0 +1,127 @@
+# The lines having # or blank lines are not processed by the program. This is just for explanation’s sake.
+# The Comments are also not read by the program
+#Week Day Time  FromZone ToZone ExpectedFare Comments
+1 Monday 10:20 2 1 35 Daily cap not reached cumSum=35
+1 Monday 10:45 1 1 25 Daily cap not reached cumSum=60
+1 Monday 16:15 1 1 25 Daily cap not reached cumSum=85
+1 Monday 18:15 1 1 30 Daily cap not reached cumSum=115
+1 Monday 19:00 1 1 5 Daily cap not reached cumSum=(120-115=5)
+1 Monday 20:00 1 1 0 Daily cap reached cumSum=0
+
+1 Tuesday 10:20 2 1 35 Daily cap not reached cumSum=35
+1 Tuesday 10:45 1 1 25 Daily cap not reached cumSum=60
+1 Tuesday 16:15 1 1 25 Daily cap not reached cumSum=85
+1 Tuesday 18:15 1 1 30 Daily cap not reached cumSum=115
+1 Tuesday 19:00 1 1 5 Daily cap not reached cumSum=(120-115=5)
+1 Tuesday 20:00 1 1 0 Daily cap reached cumSum=0
+
+1 Wednesday 10:20 2 1 35 Daily cap not reached cumSum=35
+1 Wednesday 10:45 1 1 25 Daily cap not reached cumSum=60
+1 Wednesday 16:15 1 1 25 Daily cap not reached cumSum=85
+1 Wednesday 18:15 1 1 30 Daily cap not reached cumSum=115
+1 Wednesday 19:00 1 1 5 Daily cap not reached cumSum=(120-115=5)
+1 Wednesday 20:00 1 1 0 Daily cap reached cumSum=0
+
+1 Thursday 10:20 2 1 35 Daily cap not reached cumSum=35
+1 Thursday 10:45 1 1 25 Daily cap not reached cumSum=60
+1 Thursday 16:15 1 1 25 Daily cap not reached cumSum=85
+1 Thursday 18:15 1 1 30 Daily cap not reached cumSum=115
+1 Thursday 19:00 1 1 5 Daily cap not reached cumSum=(120-115=5)
+1 Thursday 20:00 1 1 0 Daily cap reached cumSum=0
+#Check
+1 Friday 10:20 1 1 30 Daily cap not reached cumSum=30
+1 Friday 10:25 2 2 25 Daily cap not reached cumSum=55
+1 Friday 17:01 2 2 25 Daily cap  reached cumSum=80
+
+1 Saturday 20:00 2 2 25 Daily cap not reached cumSum=25
+1 Saturday 20:00 1 2 15 Weekly cap reached sum=40
+
+1 Sunday 20:00 2 2 0 Weekly cap reached
+
+2 Monday 10:20 2 1 35 Daily cap not reached cumSum=35
+2 Monday 10:45 1 1 25 Daily cap not reached cumSum=60
+2 Monday 16:15 1 1 25 Daily cap not reached cumSum=85
+2 Monday 18:15 1 1 30 Daily cap not reached cumSum=115
+2 Monday 19:00 1 1 5 Daily cap not reached cumSum=(120-115=5)
+2 Monday 20:00 1 1 0 Daily cap reached cumSum=0
+
+2 Tuesday 10:20 2 1 35 Daily cap not reached cumSum=35
+2 Tuesday 10:45 1 1 25 Daily cap not reached cumSum=60
+2 Tuesday 16:15 1 1 25 Daily cap not reached cumSum=85
+2 Tuesday 18:15 1 1 30 Daily cap not reached cumSum=115
+2 Tuesday 19:00 1 1 5 Daily cap not reached cumSum=(120-115=5)
+2 Tuesday 20:00 1 1 0 Daily cap reached cumSum=0
+
+2 Wednesday 10:20 2 1 35 Daily cap not reached cumSum=35
+2 Wednesday 10:45 1 1 25 Daily cap not reached cumSum=60
+2 Wednesday 16:15 1 1 25 Daily cap not reached cumSum=85
+2 Wednesday 18:15 1 1 30 Daily cap not reached cumSum=115
+#Changing the value by changing route to 1 2 and then followed by 2 2
+2 Wednesday 19:00 1 2 5 Daily cap not reached cumSum=(120-115=5)
+2 Wednesday 20:00 2 2 0 Daily cap reached cumSum=0
+
+#Changing route from 2 2
+2 Thursday 10:20 2 2 25 Daily cap not reached cumSum=25
+2 Thursday 10:45 2 2 20 Daily cap not reached cumSum=45
+2 Thursday 16:15 2 2 20 Daily cap not reached cumSum=65
+2 Thursday 18:15 2 2 15 Daily cap not reached cumSum=(80-65=15)
+2 Thursday 20:00 2 2 0 Daily cap reached cumSum=0
+
+2 Friday 10:20 1 1 30 Daily cap not reached cumSum=30
+2 Friday 10:25 2 2 25 Daily cap not reached cumSum=55
+2 Friday 17:01 2 2 25 Daily cap  reached cumSum=80
+
+2 Saturday 20:00 2 2 25 Daily cap not reached cumSum=25
+2 Saturday 20:00 1 2 35 Daily cap not reached cumSum=60
+2 Saturday 20:01 1 2 20 Daily cap not reached cumSum=95
+
+2 Sunday 20:00 2 2 0 Weekly cap reached
+
+3 Monday 10:20 2 1 35 Daily cap not reached cumSum=35
+3 Monday 10:45 1 1 25 Daily cap not reached cumSum=60
+3 Monday 16:15 1 1 25 Daily cap not reached cumSum=85
+3 Monday 18:15 1 1 30 Daily cap not reached cumSum=115
+3 Monday 19:00 1 1 5 Daily cap not reached cumSum=(120-115=5)
+3 Monday 20:00 1 1 0 Daily cap reached cumSum=0
+
+3 Tuesday 10:20 2 1 35 Daily cap not reached cumSum=35
+3 Tuesday 10:45 1 1 25 Daily cap not reached cumSum=60
+3 Tuesday 16:15 1 1 25 Daily cap not reached cumSum=85
+3 Tuesday 18:15 1 1 30 Daily cap not reached cumSum=115
+3 Tuesday 19:00 1 1 5 Daily cap not reached cumSum=(120-115=5)
+3 Tuesday 20:00 1 1 0 Daily cap reached cumSum=0
+
+3 Wednesday 10:20 2 1 35 Daily cap not reached cumSum=35
+3 Wednesday 10:45 1 1 25 Daily cap not reached cumSum=60
+3 Wednesday 16:15 1 1 25 Daily cap not reached cumSum=85
+3 Wednesday 18:15 1 1 30 Daily cap not reached cumSum=115
+3 Wednesday 19:00 1 1 5 Daily cap not reached cumSum=(120-115=5)
+3 Wednesday 20:00 1 1 0 Daily cap reached cumSum=0
+
+3 Thursday 10:20 2 1 35 Daily cap not reached cumSum=35
+3 Thursday 10:45 1 1 25 Daily cap not reached cumSum=60
+3 Thursday 16:15 1 1 25 Daily cap not reached cumSum=85
+3 Thursday 18:15 1 1 30 Daily cap not reached cumSum=115
+3 Thursday 19:00 1 1 5 Daily cap not reached cumSum=(120-115=5)
+3 Thursday 20:00 1 1 0 Daily cap reached cumSum=0
+
+3 Friday 10:20 1 1 30 Daily cap not reached cumSum=30
+3 Friday 10:25 2 2 25 Daily cap not reached cumSum=55
+3 Friday 17:01 2 2 25 Daily cap  reached cumSum=80
+
+3 Saturday 20:00 2 2 25 Daily cap not reached cumSum=25
+3 Saturday 20:00 1 2 15 Weekly cap reached sum=40
+
+3 Sunday 20:00 2 2 0 Weekly cap reached
+
+#Week4 we are only going to travel around zone2
+
+4 Monday 10:25 2 2 25 Daily cap not reached cumSum=25
+4 Tuesday 10:25 2 2 25 Daily cap not reached cumSum=25
+4 Wednesday 10:25 2 2 25 Daily cap not reached cumSum=25
+4 Thursday 10:25 2 2 25 Daily cap not reached cumSum=25
+4 Friday 10:16 2 2 25 Daily cap not reached cumSum=25
+4 Friday 10:17 2 2 25 Daily cap not reached cumSum=50
+4 Friday 10:18 2 2 25 Daily cap not reached cumSum=75
+4 Friday 10:19 2 2 5 Daily cap reached cumSum=100
+4 Friday 10:20 2 2 0 Daily cap reached cumSum=125

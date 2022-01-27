@@ -1,4 +1,4 @@
-package util;
+package configuration;
 
 import org.junit.jupiter.api.Test;
 import pojos.Cap;
