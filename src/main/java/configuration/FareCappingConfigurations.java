@@ -42,24 +42,26 @@ public class FareCappingConfigurations {
     public int getDailyCap(Zone zone){
         if (fareCappingConfig.containsKey(zone)){
             return fareCappingConfig.get(zone).get(Cap.DAILY);
-        }else {
-            return 0;
         }
+        throw new IllegalArgumentException("Zone="+zone + " is not configured to have a daily cap");
     }
 
     public int getWeeklyCap(Zone zone){
         if (fareCappingConfig.containsKey(zone)){
             return fareCappingConfig.get(zone).get(Cap.WEEKLY);
-        }else {
-            return 0;
         }
+        throw new IllegalArgumentException("Zone="+zone + " is not configured to have a weekly cap");
     }
 
     public Integer getDailyCap(List<Zone> zones) {
-        return zones.stream().map(this::getDailyCap).collect(Collectors.toList()).stream().max(Comparator.naturalOrder()).get();
+        return zones.stream().map(this::getDailyCap)
+                .collect(Collectors.toList()).stream()
+                .max(Comparator.naturalOrder()).get();
     }
 
     public Integer getWeeklyCap(List<Zone> zones) {
-        return zones.stream().map(this::getWeeklyCap).collect(Collectors.toList()).stream().max(Comparator.naturalOrder()).get();
+        return zones.stream().map(this::getWeeklyCap)
+                .collect(Collectors.toList()).stream()
+                .max(Comparator.naturalOrder()).get();
     }
 }

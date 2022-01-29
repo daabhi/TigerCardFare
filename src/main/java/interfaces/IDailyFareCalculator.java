@@ -1,8 +1,10 @@
 package interfaces;
 
-import pojos.*;
+import pojos.DayOfWeek;
+import pojos.Journey;
+import pojos.PeriodOfDay;
+import pojos.Zone;
 
-import java.time.LocalTime;
 import java.util.Map;
 import java.util.Set;
 

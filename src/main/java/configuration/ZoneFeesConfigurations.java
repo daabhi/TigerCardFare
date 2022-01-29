@@ -29,15 +29,17 @@ public class ZoneFeesConfigurations {
             Map<PeriodOfDay,Integer> localPeriodOfDays = new HashMap<>();
             localPeriodOfDays.put(periodOfDay,fare);
             zoneListConfigurations.put(zone,localPeriodOfDays);
-            if (zone.getZoneStartId() != zone.getZoneEndId()) {
-                zoneListConfigurations.put(new Zone(zone.getZoneEndId(), zone.getZoneStartId()), localPeriodOfDays);
-            }
+            populateOtherSide(zone, localPeriodOfDays);
         } else {
             periodOfDays.put(periodOfDay,fare);
             zoneListConfigurations.put(zone,periodOfDays);
-            if (zone.getZoneStartId() != zone.getZoneEndId()) {
-                zoneListConfigurations.put(new Zone(zone.getZoneEndId(), zone.getZoneStartId()), periodOfDays);
-            }
+            populateOtherSide(zone, periodOfDays);
+        }
+    }
+
+    private void populateOtherSide(Zone zone, Map<PeriodOfDay, Integer> localPeriodOfDays) {
+        if (zone.getZoneStartId() != zone.getZoneEndId()) {
+            zoneListConfigurations.put(new Zone(zone.getZoneEndId(), zone.getZoneStartId()), localPeriodOfDays);
         }
     }
 
